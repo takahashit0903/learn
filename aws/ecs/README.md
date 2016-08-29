@@ -67,3 +67,14 @@ docker run -p 80:80 takahashit0903/amazon-ecs-sample
 ```
 Ctrl + c
 ```
+
+### To register a task definition with the amazon-ecs-sample image
+
+- Register a task definition with the simple-app-task-def.json file.
+```
+$ aws ecs register-task-definition --cli-input-json file://simple-app-task-def.json
+```
+- cliでconsole-sample-appを実行
+```
+aws ecs run-task --task-definition console-sample-app
+```
