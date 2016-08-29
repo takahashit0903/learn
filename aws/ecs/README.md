@@ -78,3 +78,12 @@ $ aws ecs register-task-definition --cli-input-json file://simple-app-task-def.j
 ```
 aws ecs run-task --task-definition console-sample-app
 ```
+
+## Getting Started with Amazon ECS
+
+- ECSのランチウィザードからスタート
+```
+https://console.aws.amazon.com/ecs/home#/firstRun
+```
+- Select your Amazon ECS first run options.
+- Configure repository
