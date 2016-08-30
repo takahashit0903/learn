@@ -87,3 +87,33 @@ https://console.aws.amazon.com/ecs/home#/firstRun
 ```
 - Select your Amazon ECS first run options.
 - Configure repository
+
+
+# Cleaning Up your Amazon ECS Resources
+
+
+Amazon EC2 instances, Elastic Load Balancing load balancers, and Auto Scaling groups
+->  EC2のコンソールから手動で削除が必要
+
+- Scale Down Services
+サービス（sample-web）のタスクカウントを0にする
+```
+aws --region ap-southeast-2 ecs update-service --cluster default --service sample-webapp --desired-count 0
+```
+
+- Delete Services
+defaultkクラスタのサービス（sample-web）を削除
+```
+aws  --region ap-southeast-2 ecs delete-service --cluster default --service sample-webapp
+```
+
+- Deregister Container Instances
+クラスタ削除の前に内部のコンテナインスタンスの登録を解除する必要がある
+```
+aws --region ap-southeast-2 ecs deregister-container-instance --cluster default --container-instance XXXXX --force
+```
+
+- Delete a Cluster
+```
+aws --region ap-southeast-2 ecs delete-cluster --cluster default
+```
