@@ -1,5 +1,8 @@
 # docker
 
+軽量な仮想化環境  
+Build once, run anywhere  
+
 - Dockerfile
 ```
 Dockerコンテナーの構成内容をまとめて記述するシンプルなテキスト形式のファイル
