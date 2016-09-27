@@ -117,3 +117,14 @@ aws --region ap-southeast-2 ecs deregister-container-instance --cluster default 
 ```
 aws --region ap-southeast-2 ecs delete-cluster --cluster default
 ```
+
+- Delete TaskDeinitions
+Task Definitionの削除
+```
+aws --region [region] ecs deregister-task-definition --task-definition [task name]:[revision]
+```
+
+
+
+
+
