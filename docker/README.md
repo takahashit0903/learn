@@ -1,13 +1,35 @@
 # docker
 
+コンテナ(Docker)は、起動早い、リソース消費が少ない、OSはLinuxのみ
 軽量な仮想化環境  
 Build once, run anywhere  
+
+- コンテナ  
+dockerイメージから作られ、実行される仮想環境  
+
+- dockerイメージ  
+コンテナのファイルシステム、設定をひとまとめに保存している
+
+- dockerサーバ  
+docker本体ともいえる、コンテナ・イメージの管理を行うサービス  
+
+- docker hub(レジストリ)  
+docker イメージを集めたサイト
+
 
 ## インストール
 ```
 sudo yum install docker
 sudo chkconfig docker on
 sudo service docker start
+```
+
+## 基本コマンド
+
+### コンテナの一覧
+- 実行中のコンテナ一覧を表示します。(-aで停止しているコンテナも表示)
+```
+docker ps
 ```
 ### imageを取得
 - docker pull
