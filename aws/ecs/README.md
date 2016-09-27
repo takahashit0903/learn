@@ -101,25 +101,25 @@ Amazon EC2 instances, Elastic Load Balancing load balancers, and Auto Scaling gr
 aws --region ap-southeast-2 ecs update-service --cluster default --service sample-webapp --desired-count 0
 ```
 
-- Delete Services
-defaultkクラスタのサービス（sample-web）を削除
+- Delete Services  
+defaultkクラスタのサービス（sample-web）を削除  
 ```
 aws  --region ap-southeast-2 ecs delete-service --cluster default --service sample-webapp
 ```
 
-- Deregister Container Instances
-クラスタ削除の前に内部のコンテナインスタンスの登録を解除する必要がある
+- Deregister Container Instances  
+クラスタ削除の前に内部のコンテナインスタンスの登録を解除する必要がある  
 ```
 aws --region ap-southeast-2 ecs deregister-container-instance --cluster default --container-instance XXXXX --force
 ```
 
-- Delete a Cluster
+- Delete a Cluster  
 ```
 aws --region ap-southeast-2 ecs delete-cluster --cluster default
 ```
 
-- Delete TaskDeinitions
-Task Definitionの削除
+- Delete TaskDeinitions  
+Task Definitionの削除  
 ```
 aws --region [region] ecs deregister-task-definition --task-definition [task name]:[revision]
 ```
