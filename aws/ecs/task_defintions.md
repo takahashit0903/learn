@@ -38,6 +38,10 @@ Dockerコンテナを実行するために必要
 空のタスク定義のテンプレートを以下に示します。あなたは、コンソールJSON入力エリアに貼り付けたり、ファイルに保存され、AWSのCLIで使用することができ、あなたのタスク定義を作成するには、このテンプレートを使用することができます--cli-input-json オプションを選択します
 次のAWS CLIコマンドを使用して、タスク定義のテンプレートを生成することができます。
 ```
+$ aws ecs register-task-definition --generate-cli-skeleton
+```
+template
+```
 {
     "family": "",
     "taskRoleArn": "",
@@ -133,4 +137,20 @@ Dockerコンテナを実行するために必要
         }
     ]
 }
+
+Register a task definition with the simple-app-task-def.json file.
 ```
+$ aws ecs register-task-definition --cli-input-json file://simple-app-task-def.json
+```
+
+ECSでタスクを実行する前にクラスタのコンテナインスタンスを起動させる必要がある。
+タスク実行コマンド
+```
+$ aws ecs run-task --task-definition console-sample-app
+```
+
+# Task Difinitions Parameter
+
+family,taskRoleArn,containerDefinitions,Volume の4つの基本的な部分に分割される。  
+
+
