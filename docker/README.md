@@ -50,7 +50,7 @@ docker stop centos
 ```
 ###  コンテナの保存
 ```
-dodcker commit centos  リポジトリ/タグ名
+dodcker commit centos  リポジトリ:タグ名
 ```
 ### コンテナの削除
 ```
@@ -60,6 +60,11 @@ docker rm centos
 ```
 docker cp タグ名:/var/log/httpd /tmp
 ```
+### docker hubへ保存
+```
+docker push リポジトリ:タグ名
+```
+
 - Dockerfile
 ```
 Dockerコンテナーの構成内容をまとめて記述するシンプルなテキスト形式のファイル
