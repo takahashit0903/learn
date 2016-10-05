@@ -65,6 +65,7 @@ docker cp タグ名:/var/log/httpd /tmp
 docker push リポジトリ:タグ名
 ```
 
+## コンテナイメージの自動生成
 - Dockerfile
 ```
 Dockerコンテナーの構成内容をまとめて記述するシンプルなテキスト形式のファイル
