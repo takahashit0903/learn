@@ -44,7 +44,22 @@ docker pull centos
 ```
 docker run -it centos /bin/bash
 ```
-
+### コンテナの停止
+```
+docker stop centos
+```
+###  コンテナの保存
+```
+dodcker commit centos  リポジトリ/タグ名
+```
+### コンテナの削除
+```
+docker rm centos
+```
+### コンテナ内のhttpdログファイルをホストの/tmpへコピー
+```
+docker cp タグ名:/var/log/httpd /tmp
+```
 - Dockerfile
 ```
 Dockerコンテナーの構成内容をまとめて記述するシンプルなテキスト形式のファイル
