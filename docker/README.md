@@ -48,7 +48,7 @@ docker run -it centos /bin/bash
 ```
 docker stop centos
 ```
-###  コンテナの保存
+###  コンテナimageの保存
 ```
 dodcker commit centos  リポジトリ:タグ名
 ```
@@ -56,7 +56,7 @@ dodcker commit centos  リポジトリ:タグ名
 ```
 docker rm centos
 ```
-### コンテナイメージの削除
+### コンテナimageの削除
 ```
 docker rmi イメージID
 ```
