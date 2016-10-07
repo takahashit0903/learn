@@ -72,6 +72,10 @@ docker push リポジトリ:タグ名
 ```
 docker save リポジトリ | gzip > ファイル.tgz
 ```
+### saveしたコンテナイメージを登録
+```
+docker load -i ファイル.tgz
+```
 
 ## コンテナイメージの自動生成
 - Dockerfile
