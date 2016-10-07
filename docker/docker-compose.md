@@ -21,7 +21,8 @@ docker-compose version 1.8.0, build f3628c7
 
 ## docker-compose.yml
 複数のコンテナの設定内容をまとめて1つのファイルに記述します。  
-  
+
+### ベースイメージの指定
 image: ベースイメージの指定。 takahashit0903/apache:ver1.0
 
 build: イメージ構成をDockerfileに記述して、それを自動でビルドしてベースイメージに指定する場合、Dockerfileのパスを指定。 .  
@@ -29,24 +30,18 @@ Dockerfileの作成
 ```
 FROM ubuntu
 ```
-
-## 複数コンテナの生成
-```
-docker-compose up
-```
-
-## コンテナ内で動かすコマンド指定
+### コンテナ内で動かすコマンド指定
 ```
 command: /bin/bash
 ```
-## コンテナ間リンク連携
+### コンテナ間リンク連携
 ```
 links:
   - dbserver
   - dbserver:mysql
 ```
 
-## コンテナ間の通信
+### コンテナ間の通信
 コンテナのポート番号のみを指定した時は、ホストマシンのポートはランダムな値が設定される  
 ```
 ports:
@@ -60,4 +55,19 @@ DBサーバのようにWEBアプリケーション機能を持つコンテナを
 expose:
   - "3000"
   - "8000"
+```
+### コンテナのデータ管理
+コンテナにボリュームをマウントするときは、volusesを指定。
+```
+volumes:
+ - /var/lib/mysql
+ - cache/:/tmp/cache
+ ホスト側でマウントするパスを指定するには、ホストのディレクトリパス:コンテナのディレクトリパスを指定
+ - ~/configs:/etc/configs/:ro
+ 読み取り専用としてマウントできる。
+
+volumes_from:
+ - log
+
+別のコンテナから全てのボリュームをマウントするときは、コンテナ名を指定
 ```
