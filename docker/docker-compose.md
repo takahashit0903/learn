@@ -71,3 +71,25 @@ volumes_from:
 
 別のコンテナから全てのボリュームをマウントするときは、コンテナ名を指定
 ```
+### コンテナの環境変数指定
+```
+# 配列形式での指定
+enviroment:
+ - HOGE=fuga
+ - FOO
+# ハッシュ形式での指定
+enviroment:
+ HOGE: fuga
+ FOO:
+```
+ファイルを分けて定義することが可能
+```
+env_file:
+ - ./envfile
+ - tmp/envfile2
+```
+envfile
+```
+HOGE=foo
+FOO=bar
+```
