@@ -56,6 +56,10 @@ dodcker commit centos  リポジトリ:タグ名
 ```
 docker rm centos
 ```
+### コンテナイメージの削除
+```
+docker rmi イメージID
+```
 ### コンテナ内のhttpdログファイルをホストの/tmpへコピー
 ```
 docker cp タグ名:/var/log/httpd /tmp
