@@ -68,6 +68,10 @@ docker cp タグ名:/var/log/httpd /tmp
 ```
 docker push リポジトリ:タグ名
 ```
+### ローカルにリポジトロリ単位で保存
+```
+docker save リポジトリ | gzip > ファイル.tgz
+```
 
 ## コンテナイメージの自動生成
 - Dockerfile
