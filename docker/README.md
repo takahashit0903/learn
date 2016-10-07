@@ -97,5 +97,7 @@ Dockerコンテナーの構成内容をまとめて記述するシンプルな�
 - docker build
 ```
 Dockerコンテナーの起動、構成、Dockerイメージの作成まで一気に実行
+
+docker build -t リポジトリ:タグ名 ディレクトリパス
 ```
 
