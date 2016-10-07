@@ -93,3 +93,46 @@ envfile
 HOGE=foo
 FOO=bar
 ```
+## 複数コンテナの生成（up）
+```
+docker-compose up
+
+-d バックグランドで実行
+--no-build イメージをビルドしない
+-t --timeout コンテナのタイムアウトを秒指定
+```
+## 生成するコンテナ数の指定（scale）
+serverAのコンテナを10個、serverBのコンテナを20個起動する場合
+```
+docker-compose scale serverA=10 server=20
+```
+## 複数コンテナの確認
+```
+docker-compose ps
+
+-q コンテナIDの確認
+```
+## ログの確認
+```
+docker-compose logs
+```
+## 複数コンテナの起動・停止・再起動
+一括起動・停止・再起動
+```
+docker-compose start
+docker-compose stop
+docker-compose restart
+```
+特定コンテナの再起動
+```
+docker-compose restart serverA
+```
+複数コンテナの強制停止・削除
+コンテナへのシグナル送信
+```
+docker-compose kill -s SIGINT
+```
+コンテナの一括削除
+```
+docker-compose rm
+```
