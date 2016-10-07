@@ -127,7 +127,7 @@ docker-compose restart
 ```
 docker-compose restart serverA
 ```
-複数コンテナの強制停止・削除
+## 複数コンテナの強制停止・削除
 コンテナへのシグナル送信
 ```
 docker-compose kill -s SIGINT
