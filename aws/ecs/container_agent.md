@@ -22,3 +22,8 @@ $ curl -s http://localhost:51678/v1/metadata | jq .
   "Version": "Amazon ECS Agent - v1.13.0 (aebcbca)"
 }
 ```
+### ECSの設定ファイル
+```
+/etc/ecs/ecs.config
+```
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html
