@@ -1,0 +1,25 @@
+# web server setting (container name. docker run --name XXXX)
+webserver:
+  # base image setting
+  image: wordpress
+
+  # port transport setting (<host server posrt>:<container port> )
+  ports:
+    - "80:80"
+
+  # container link setting (<container name>:<alias name>)
+  links:
+    - "dbserver:mysql"
+
+# db server setting (container name. docker run --name XXXX)
+dbserver:
+  # base image setting
+  image: mysql
+
+  # data save setting (mount contaner name)
+  volumes_from:
+    - dataonly
+
+  # env setting
+  environment:
+    MYSQL_ROOT_PASSWORD: password
