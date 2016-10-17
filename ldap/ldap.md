@@ -43,3 +43,12 @@ entryCSN: 20161017034731.308254Z#000000#000#000000
 modifiersName: cn=config
 modifyTimestamp: 20161017034731Z
 ```
+###DB設定
+LDAPサーバで利用できるデータベースには幾つかの種類が存在します。ここではバーク レーDBというのを利用しま すがその場合はデータベースがファイルが保存されているディレクトリにキャッシュサイズなどを指定するための設定ファイル「DB_CONFIG」を配置す る必要があります。そこで予め用意されている「DB_CONFIG」のサンプル「/etc/openldap/DB_CONFIG.example」を /var/lib/ldapディレクトリにコピーします。  
+```
+sudo cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+```
+###サービス起動
+```
+ /etc/rc.d/init.d/slapd start
+```
