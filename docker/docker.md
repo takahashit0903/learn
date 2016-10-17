@@ -40,6 +40,11 @@ docker pull centos
 ```
 ### imageのリスト確認
 - docker images
+```
+-q imageIDのみ表示
+```
+### image Tagの設定
+- docker tag ＜docker hubのユーザ名＞/image名:[tag名]
 
 ### imageからcontainerを作成し、container内のshellに入る
 ```
