@@ -22,6 +22,7 @@ docker イメージを集めたサイト
 sudo yum install docker
 sudo chkconfig docker on
 sudo service docker start
+sudo usermod -a -G docker [ユーザ]
 ```
 
 ## 基本コマンド
