@@ -27,9 +27,9 @@ variable "fqdns" {
   type = "map"
 
   default = {
-    "1" = "host-name.cygr.jp"
+    "1" = "host-name.jp"
 
-    #"2" = "host-name.sub.cygr.jp"
+    #"2" = "host-name.sub.jp"
   }
 }
 
