@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    links:
+      - php
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+    # SSL証明書のディレクトリ
+      - /etc/pki/tls/certs:/etc/pki/tls/certs
+    # 秘密鍵のディレクトリ
+      - /etc/pki/tls/private:/etc/pki/tls/private
